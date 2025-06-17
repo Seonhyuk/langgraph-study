@@ -5,10 +5,20 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "beautifulsoup4>=4.13.4",
+    "html2text>=2025.4.15",
+    "langchain-chroma>=0.2.4",
+    "langchain-community>=0.3.25",
     "langchain-openai>=0.3.23",
+    "langchain-text-splitters>=0.3.8",
     "langgraph>=0.4.8",
+    "markdown>=3.8",
+    "nest-asyncio>=1.6.0",
+    "nltk>=3.9.1",
+    "py-zerox>=0.0.7",
     "pypdf>=5.6.0",
     "python-dotenv>=1.1.0",
+    "unstructured[md]>=0.17.2",
 ]
 
 [dependency-groups]

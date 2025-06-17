@@ -1,14 +1,12 @@
-from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
-
-load_dotenv()
+from agents.test_agent.test_graph_builder import graph
 
 
 def main():
-    query = "오늘 날씨 알려줘"
-    llm = ChatOpenAI(model="gpt-4.1-nano")
+    query = "연봉 5천만원 직장인의 소득세는?"
 
-    result = llm.invoke(query)
+    initial_state = {"query": query}
+
+    result = graph.invoke(initial_state)
     print(result)
 
 
