@@ -19,11 +19,20 @@ loader = TextLoader(text_path)
 
 document_list = loader.load_and_split(text_splitter)
 
-embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+embedding_function = OpenAIEmbeddings(model="text-embedding-3-large")
 
-vector_store = Chroma.from_documents(
-    documents=document_list,
-    embedding=embeddings,
+
+def create_vector_store(documents, embedding):
+    Chroma.from_documents(
+        documents=documents,
+        embedding=embedding,
+        collection_name="income_tax_collection",
+        persist_directory="income_tax_collection",
+    )
+
+
+vector_store = Chroma(
+    embedding_function=embedding_function,
     collection_name="income_tax_collection",
     persist_directory="income_tax_collection",
 )

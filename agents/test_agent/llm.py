@@ -4,7 +4,9 @@ from langchain import hub
 
 load_dotenv()
 
-prompt = hub.pull("rlm/rag-prompt")
+generate_prompt = hub.pull("rlm/rag-prompt")
+relevance_doc_prompt = hub.pull("langchain-ai/rag-document-relevance")
+
 llm = ChatOpenAI(model="gpt-4.1")
 
 
@@ -12,5 +14,3 @@ def get_llm():
     return llm
 
 
-def get_prompt():
-    return prompt
